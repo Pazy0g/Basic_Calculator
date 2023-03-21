@@ -15,16 +15,16 @@
 
 function Calculate($nb01, $operation, $nb02)
 {
+
+
+    // This code checks if any of the values nb01 or nb02 have not been provided using GET method in URL
+    // If any value is empty or null, it returns true
     if (
-        ($_GET["nb01"] == null)
+        (empty($_GET["nb01"])
         ||
-        ($_GET["nb02"] == null)
-        ||
-        ($_GET["nb01"] == null)
-        and
-        ($_GET["nb02"] == null)
+        empty($_GET["nb02"]))
     ) {
-        print "<h2>Vous devez renseigner deux nombres </h2>";
+        print("<h2>Vous devez renseigner deux nombres</h2>");
         exit();
     } else {
         switch ($operation) {
